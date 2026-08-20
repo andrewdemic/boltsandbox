@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@keyframes orbit-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit-counter-rotate {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(-360deg); }
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+@keyframes swim-right {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes swim-left {
+  from { transform: translateX(calc(100vw + 200px)); }
+  to { transform: translateX(-200px); }
+}
+
+@keyframes fish-bob {
+  from { transform: translateY(0px); }
+  to { transform: translateY(var(--bob, 8px)); }
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: var(--bubble-opacity, 0.3); }
+  90% { opacity: var(--bubble-opacity, 0.3); }
+  100% { transform: translateY(-600px) scale(0.6); opacity: 0; }
+}
+
+@keyframes sway {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+
+@keyframes submarine-panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes creature-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hotspot-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes deep-drift-0 { from { transform: translateX(0); } to { transform: translateX(30px); } }
+@keyframes deep-bob-0 { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+@keyframes deep-drift-1 { from { transform: translateX(0); } to { transform: translateX(-25px); } }
+@keyframes deep-bob-1 { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+@keyframes deep-drift-2 { from { transform: translateX(0); } to { transform: translateX(35px); } }
+@keyframes deep-bob-2 { from { transform: translateY(0); } to { transform: translateY(-12px); } }
+@keyframes deep-drift-3 { from { transform: translateX(0); } to { transform: translateX(-30px); } }
+@keyframes deep-bob-3 { from { transform: translateY(0); } to { transform: translateY(-18px); } }
+@keyframes deep-drift-4 { from { transform: translateX(0); } to { transform: translateX(25px); } }
+@keyframes deep-bob-4 { from { transform: translateY(0); } to { transform: translateY(-14px); } }
+
+@keyframes cloud-drift-right {
+  from { transform: translateX(-300px); }
+  to { transform: translateX(calc(100vw + 300px)); }
+}
+
+@keyframes cloud-drift-left {
+  from { transform: translateX(calc(100vw + 300px)); }
+  to { transform: translateX(-300px); }
+}
+
+@keyframes bird-bob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+@keyframes cloud-float-0 { from { transform: translate(0, 0); } to { transform: translate(15px, -10px); } }
+@keyframes cloud-float-1 { from { transform: translate(0, 0); } to { transform: translate(-12px, -8px); } }
+@keyframes cloud-float-2 { from { transform: translate(0, 0); } to { transform: translate(18px, -12px); } }
+@keyframes cloud-float-3 { from { transform: translate(0, 0); } to { transform: translate(-15px, -6px); } }
+@keyframes cloud-float-4 { from { transform: translate(0, 0); } to { transform: translate(10px, -14px); } }
+@keyframes cloud-float-5 { from { transform: translate(0, 0); } to { transform: translate(-18px, -10px); } }
+
+@keyframes wing-flap {
+  0%, 100% { transform: rotate(20deg) scaleY(0.72); }
+  50% { transform: rotate(-28deg) scaleY(1.12); }
+}
+
+.bird-wing {
+  transform-box: fill-box;
+  transform-origin: 50% 10%;
+  animation: wing-flap 0.42s ease-in-out infinite;
+}
+
+@keyframes ufo-bob {
+  from { transform: translateY(0) rotate(-2deg); }
+  to { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes ufo-beam-in {
+  from { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  to { opacity: 1; transform: scaleY(1); transform-origin: top; }
+}
+
+@keyframes ufo-beam-pulse {
+  0% { opacity: 0; transform: scaleY(0); transform-origin: top center; }
+  40% { opacity: 1; transform: scaleY(1); transform-origin: top center; }
+  100% { opacity: 1; transform: scaleY(1); transform-origin: top center; }
+}
+
+@keyframes beam-particle {
+  0% { top: 100%; opacity: 0; transform: translateX(-50%) translateX(-15px); }
+  20% { opacity: 1; }
+  50% { transform: translateX(-50%) translateX(15px); }
+  80% { opacity: 1; }
+  100% { top: 0%; opacity: 0; transform: translateX(-50%) translateX(-15px); }
+}
